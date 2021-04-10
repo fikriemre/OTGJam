@@ -1,25 +1,24 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubePlayer : Player
+public class CirclePlayer : Player
 {
 
     public bool canMove;
 
     public bool canJump;
-    
-    
+
+
     private void Update()
     {
-       
+
 
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
-        
+
     }
 
     private void FixedUpdate()
@@ -32,15 +31,15 @@ public class CubePlayer : Player
     private void MoveHorizontal()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-        
-        Debug.Log(speedMult);
-        
-        rb.velocity = new Vector2(moveHorizontal * speedMult * Time.deltaTime, rb.velocity.y);
+
+        Debug.Log(moveHorizontal);
+
+        rb.AddTorque(-speedMult * moveHorizontal);
     }
 
     public void Jump()
     {
         rb.AddForce(Vector2.up * jumpMult, ForceMode2D.Impulse);
     }
-    
+
 }
