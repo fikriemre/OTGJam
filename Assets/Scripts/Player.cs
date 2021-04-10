@@ -23,12 +23,7 @@ public class Player : MonoBehaviour
       if (hit.collider != null)
       {
          Instantiate(hit.collider.gameObject, transform.position, Quaternion.identity);
-         if(!isMainCharacter)
-            Destroy(gameObject);
-         else
-         {
-            
-         }
+         Destroy(gameObject);
          Debug.Log(hit.collider.gameObject.name);
          
       }
