@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,10 +23,94 @@ public class GameManager : MonoBehaviour
     #endregion
   
     public GameObject mainPlayer;
-    
-    
+
+    public Vector3 checkPoint;
+
+    private int currentSceneIndex;
+
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         _instance = this;
+        DontDestroyOnLoad(gameObject);
+        StartCoroutine(FindStartCheckpoint());
+        StartCoroutine(SpawnPlayer());
+
     }
+
+    private void Start()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        StartCoroutine(FindStartCheckpoint());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           KillPlayer();
+        }
+    }
+
+    IEnumerator FindStartCheckpoint()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>();
+
+        foreach (var c in checkpoints)
+        {
+            if (c.startPoint)
+                checkPoint = c.transform.position;
+        }
+    }
+
+    IEnumerator SpawnPlayer()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        Instantiate(mainPlayer, checkPoint, Quaternion.identity);
+    }
+    
+    public void LoadSameScene()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(SpawnPlayer());
+    }
+
+    public void LoadNextScene()
+    {
+        currentSceneIndex += 1;
+        SceneManager.LoadScene(currentSceneIndex);
+        StartCoroutine(FindStartCheckpoint());
+        StartCoroutine(SpawnPlayer());
+    }
+
+    public void LoadMainScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void AssignCheckpoint(Vector3 pos)
+    {
+        checkPoint = pos;
+    }
+
+    public void KillPlayer()
+    {
+        if(Player.Instance)
+        {
+            Player.Instance.KillPlayer();
+        }
+    }
+    
+    
 }

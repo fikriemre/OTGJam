@@ -37,8 +37,6 @@ public class CirclePlayer : Player
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
 
-        Debug.Log(moveHorizontal);
-
         rb.AddTorque(-speedMult * moveHorizontal);
     }
 

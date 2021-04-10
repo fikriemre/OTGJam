@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   
+   public static Player Instance;
+
    public LayerMask targetLayer;
 
    public bool isMainCharacter;
@@ -15,8 +16,13 @@ public class Player : MonoBehaviour
 
    public Collider2D collider;
    public Rigidbody2D rb;
-   
-   
+
+   private void Awake()
+   {
+      Instance = this;
+   }
+
+
    public void ChangePlayerControl()
    {
       RaycastHit2D hit = Physics2D.CircleCast(transform.position, 2, Vector2.up, 0.1f, targetLayer);
@@ -41,7 +47,7 @@ public class Player : MonoBehaviour
 
    public void KillPlayer()
    {
-      
+      Destroy(gameObject);
    }
 
    private void OnDrawGizmos()
