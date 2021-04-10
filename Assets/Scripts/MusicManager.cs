@@ -22,7 +22,12 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlayMusic(AudioClip musicClip)

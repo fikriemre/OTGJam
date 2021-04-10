@@ -47,9 +47,6 @@ public class leafPlayer : Player
     private void MoveHorizontal()
     {
         float MoveHorizontal = Input.GetAxis("Horizontal");
-
-        Debug.Log(speedMult);
-
         rb.velocity = new Vector2(MoveHorizontal * speedMult * Time.deltaTime, rb.velocity.y);
     }
 

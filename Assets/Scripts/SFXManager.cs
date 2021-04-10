@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
+
+
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
@@ -36,7 +38,12 @@ public class SFXManager : MonoBehaviour
 
     private void Awake()
     {
+        if(instance != null)
+        {
+            Destroy(gameObject);
+        }
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlaySFXSound(AudioClip audioClip)
@@ -46,7 +53,18 @@ public class SFXManager : MonoBehaviour
 
     public void WalkSound()
     {
-        audioSource.PlayOneShot(audioClips[(int)SFXClips.walk]);
+        AudioClip clip = (audioClips[(int)SFXClips.walk]);
+        audioSource.clip = clip;
+        Debug.Log(clip.length);
+        //if(canPlay)
+        //{
+        //    audioSource.Play();
+        //}
+        //else
+        //{
+        //    audioSource.Stop();
+        //}
+        
     }
     public void JumpSound()
     {
