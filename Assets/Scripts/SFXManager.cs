@@ -21,6 +21,17 @@ public class SFXManager : MonoBehaviour
         }
     }
 
+    public enum SFXClips
+    {
+        leaf ,
+        grass ,
+        rock ,
+        jump ,
+        walk ,
+        detection
+    }
+
+
     private void Awake()
     {
         instance = this;
@@ -28,13 +39,17 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySFXSound(AudioClip audioClip)
     {
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);
+        audioSource.PlayOneShot(audioClip);
     }
 
     public void EnemyDetectedSound()
+    {        
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.detection]);
+    }
+
+    public void JumpSound()
     {
-        
-        audioSource.PlayOneShot(audioClips[0]);
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.jump]);
     }
 
 }

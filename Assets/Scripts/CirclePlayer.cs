@@ -43,6 +43,7 @@ public class CirclePlayer : Player
     public void Jump()
     {
         rb.AddForce(Vector2.up * jumpMult, ForceMode2D.Impulse);
+        SFXManager.Instance.JumpSound();
     }
 
 }
