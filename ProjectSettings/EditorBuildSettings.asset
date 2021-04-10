@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Eray 1.unity
-    guid: cd55484241fec3f47a74ce84fa3fb1ca
+    path: Assets/Scenes/Main Menu.unity
+    guid: cd7075ef9e31a5b47978737af2658c10
   - enabled: 1
-    path: Assets/Scenes/Eray 2.unity
-    guid: 236e72b2b080c574c8842360181b32aa
+    path: Assets/Scenes/Game Over.unity
+    guid: af0ac6b5b4a4890439e5d4dffc562f7d
   - enabled: 1
-    path: Assets/Scenes/Eray 3.unity
-    guid: 3409bf7967b66ef4c974196ec2f22c21
+    path: Assets/Scenes/Efe.unity
+    guid: 82432d252b187cb4ba163e4039121b83
   m_configObjects: {}
