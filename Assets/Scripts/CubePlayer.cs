@@ -38,6 +38,7 @@ public class CubePlayer : Player
     {
         float moveHorizontal = Input.GetAxis("Horizontal");      
         rb.velocity = new Vector2(moveHorizontal * speedMult * Time.deltaTime, rb.velocity.y);
+        SFXManager.Instance.WalkSound( Mathf.Abs(moveHorizontal) >= 0.01f);
         
     }
 

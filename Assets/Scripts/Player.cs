@@ -19,17 +19,9 @@ public class Player : MonoBehaviour
 
    private void Awake()
    {
-
       Instance = this;
-
    }
-    private void Start()
-    {
-        SFXManager.Instance.WalkSound();
-    }
-
-
-    public void ChangePlayerControl()
+   public void ChangePlayerControl()
    {
       RaycastHit2D hit = Physics2D.CircleCast(transform.position, 2, Vector2.up, 0.1f, targetLayer);
 
