@@ -54,6 +54,7 @@ public class Player : MonoBehaviour
 
    public void KillPlayer()
    {
+        SFXManager.Instance.DeathSound();
       Destroy(gameObject);
    }
 

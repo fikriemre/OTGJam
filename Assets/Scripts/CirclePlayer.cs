@@ -29,12 +29,9 @@ public class CirclePlayer : Player
         MoveHorizontal();
     }
 
-
-
     private void MoveHorizontal()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
-
         rb.AddTorque(-speedMult * moveHorizontal);
     }
 
