@@ -272,6 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayerReplica: {fileID: 6857530161006467466, guid: af6e08e9137f61749ad6781ed578b872, type: 3}
+  turnObjectSound: {fileID: 8300000, guid: 622d210919e470c42a1c8349c2d79f88, type: 3}
 --- !u!1 &5323584125432252033
 GameObject:
   m_ObjectHideFlags: 0

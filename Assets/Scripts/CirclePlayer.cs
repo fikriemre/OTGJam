@@ -12,8 +12,6 @@ public class CirclePlayer : Player
 
     private void Update()
     {
-
-
         if (Input.GetButtonDown("Jump"))
         {
             Jump();

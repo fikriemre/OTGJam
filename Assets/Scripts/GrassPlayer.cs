@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GrassPlayer : Player
-{   
+{
 
     void Start()
     {
@@ -18,10 +18,6 @@ public class GrassPlayer : Player
             Jump();
         }
         if (Input.GetKeyDown(KeyCode.F))
-        {
-            ChangePlayerControl();
-        }
-         if (Input.GetKeyDown(KeyCode.F))
         {
             TurnBackToOriginal();
         }

@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1659188085
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6857530161006467464}
   - component: {fileID: 6857530161006467465}
   - component: {fileID: 8034459186828834915}
+  - component: {fileID: 8502912147431522467}
   m_Layer: 8
   m_Name: Yaprak
   m_TagString: Untagged
@@ -183,7 +184,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6857530161006467466}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de39c75fcbab4e54492bed3e3b240943, type: 3}
   m_Name: 
@@ -198,6 +199,31 @@ MonoBehaviour:
   rb: {fileID: 6857530161006467465}
   canMove: 0
   canJump: 0
+--- !u!114 &8502912147431522467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857530161006467466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f3f0d8e37f4d14484c52a3c9bf887e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isMainCharacter: 0
+  speedMult: 100
+  jumpMult: 100
+  collider: {fileID: 6857530161006467464}
+  rb: {fileID: 6857530161006467465}
+  canMove: 0
+  canJump: 0
+  WindSpeed: 0
+  turnLeafSound: {fileID: 8300000, guid: 622d210919e470c42a1c8349c2d79f88, type: 3}
+  turnLeafSoundVolume: 0.75
 --- !u!1 &6857530161296440188
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +294,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1659188085
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -351,7 +377,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1659188085
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

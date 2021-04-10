@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
          if (co)
          {
             GameObject go = Instantiate(co.myPlayerReplica, transform.position, Quaternion.identity);
+            SFXManager.Instance.PlaySFXSound(co.turnObjectSound);
             Destroy(co.gameObject);
             Destroy(gameObject);
          }

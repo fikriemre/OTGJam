@@ -11,12 +11,13 @@ public class leafPlayer : Player
     [Range(0,1)]
     public float WindSpeed;
 
+
     private void Update()
     {
-
-
-
-
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TurnBackToOriginal();
+        }
     }
 
     private void FixedUpdate()

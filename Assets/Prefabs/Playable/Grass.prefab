@@ -143,3 +143,5 @@ MonoBehaviour:
   jumpMult: 5
   collider: {fileID: 5713576891099349036}
   rb: {fileID: 5713576891099349037}
+  turnLeafSound: {fileID: 8300000, guid: 622d210919e470c42a1c8349c2d79f88, type: 3}
+  turnLeafSoundVolume: 1
