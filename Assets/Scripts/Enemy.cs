@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     Player player;
     GameObject playerObje;
     Rigidbody2D Rb;
-    Vector2 playerPoz;
     public float Speed = 100f;
     public Transform[] WayPointsTransform;
     private List<Vector3> WayPoints = new List<Vector3>();
@@ -59,10 +58,11 @@ public class Enemy : MonoBehaviour
             
             Vector3 Distance = WayPoints[WayPointIndex] - transform.position;
             Distance.y = 0;
-            Rb.velocity = (Distance).normalized * Speed * Time.fixedDeltaTime;
+            Rb.velocity = (Distance) * Speed * Time.fixedDeltaTime;
             if (Mathf.Abs(Distance.x) <= 1)
             {
                 WayPointIndex = (WayPointIndex + 1) == WayPoints.Count ? 0 : WayPointIndex + 1;
+                transform.Rotate(new Vector3(0, transform.rotation.y + 180, 0));
             }
 
 
