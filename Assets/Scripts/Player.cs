@@ -15,18 +15,30 @@ public class Player : MonoBehaviour
 
    public Collider2D collider;
    public Rigidbody2D rb;
- 
+   
+   
    public void ChangePlayerControl()
    {
       RaycastHit2D hit = Physics2D.CircleCast(transform.position, 2, Vector2.up, 0.1f, targetLayer);
 
       if (hit.collider != null)
       {
-         Instantiate(hit.collider.gameObject, transform.position, Quaternion.identity);
-         Destroy(gameObject);
-         Debug.Log(hit.collider.gameObject.name);
+         ChangableObject co = hit.collider.gameObject.GetComponent<ChangableObject>();
+         if (co)
+         {
+            GameObject go = Instantiate(co.myPlayerReplica, transform.position, Quaternion.identity);
+            Destroy(co.gameObject);
+            Destroy(gameObject);
+         }
+        
          
       }
+   }
+
+   public void TurnBackToOriginal()
+   {
+      Instantiate(GameManager.Instance.mainPlayer, transform.position, Quaternion.identity);
+      Destroy(gameObject);
    }
 
    private void OnDrawGizmos()

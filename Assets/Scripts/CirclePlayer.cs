@@ -19,6 +19,11 @@ public class CirclePlayer : Player
             Jump();
         }
 
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            TurnBackToOriginal();
+        }
+
     }
 
     private void FixedUpdate()

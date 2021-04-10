@@ -20,7 +20,7 @@ public class CubePlayer : Player
             Jump();
         }
         
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.F))
         {
             ChangePlayerControl();
         }
