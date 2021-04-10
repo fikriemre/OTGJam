@@ -20,6 +20,11 @@ public class CubePlayer : Player
             Jump();
         }
         
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ChangePlayerControl();
+        }
+        
     }
 
     private void FixedUpdate()
@@ -33,7 +38,6 @@ public class CubePlayer : Player
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         
-        Debug.Log(speedMult);
         
         rb.velocity = new Vector2(moveHorizontal * speedMult * Time.deltaTime, rb.velocity.y);
     }
