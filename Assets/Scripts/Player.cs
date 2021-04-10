@@ -46,8 +46,9 @@ public class Player : MonoBehaviour
 
    public void KillPlayer()
    {
-        SFXManager.Instance.DeathSound();
+      SFXManager.Instance.EnemyHitSound();
       Destroy(gameObject);
+      SFXManager.Instance.DeathSound();
    }
 
    private void OnDrawGizmos()

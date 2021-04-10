@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
         {
             WayPoints.Add(WayPointsTransform[i].position);
         }
+
+        StartCoroutine(EnemySound());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,6 +50,7 @@ public class Enemy : MonoBehaviour
             //Oyuncuyu Takip et
 
             Rb.velocity = (player.transform.position - transform.position).normalized * Speed * Time.fixedDeltaTime;
+            SFXManager.Instance.EnemyDetectedSound();
 
 
 
@@ -81,5 +84,12 @@ public class Enemy : MonoBehaviour
         {
             Gizmos.DrawLine(WayPointsTransform[i].position, WayPointsTransform[i - 1].position);
         }
+    }
+
+    float voiceDelay = Random.Range(1, 2);
+    IEnumerator EnemySound()
+    {
+        SFXManager.Instance.EnemyVoice();
+        yield return new WaitForSeconds(voiceDelay);
     }
 }
