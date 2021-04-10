@@ -5,5 +5,4 @@ using UnityEngine;
 public class ChangableObject : MonoBehaviour
 {
     public GameObject myPlayerReplica;
-    
 }

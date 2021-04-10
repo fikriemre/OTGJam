@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
             Destroy(co.gameObject);
             Destroy(gameObject);
          }
-        
-         
       }
    }
 
@@ -39,6 +37,11 @@ public class Player : MonoBehaviour
    {
       Instantiate(GameManager.Instance.mainPlayer, transform.position, Quaternion.identity);
       Destroy(gameObject);
+   }
+
+   public void KillPlayer()
+   {
+      
    }
 
    private void OnDrawGizmos()

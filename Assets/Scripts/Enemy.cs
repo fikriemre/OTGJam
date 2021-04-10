@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
         }
         player = collision.gameObject.GetComponent<Player>();
     }
+    
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (player)
