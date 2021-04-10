@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
    
    public LayerMask targetLayer;
 
+   public bool isMainCharacter;
+
    public float speedMult;
    public float jumpMult;
 
@@ -21,7 +23,12 @@ public class Player : MonoBehaviour
       if (hit.collider != null)
       {
          Instantiate(hit.collider.gameObject, transform.position, Quaternion.identity);
-         Destroy(gameObject);
+         if(!isMainCharacter)
+            Destroy(gameObject);
+         else
+         {
+            
+         }
          Debug.Log(hit.collider.gameObject.name);
          
       }

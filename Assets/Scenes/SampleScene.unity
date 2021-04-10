@@ -418,7 +418,8 @@ GameObject:
   - component: {fileID: 779229348}
   - component: {fileID: 779229347}
   - component: {fileID: 779229346}
-  m_Layer: 0
+  - component: {fileID: 779229349}
+  m_Layer: 6
   m_Name: Yaprak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +500,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &779229349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779229345}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74c7c4590a39ec5499f307cb530a54d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isMainCharacter: 0
+  speedMult: 0
+  jumpMult: 0
+  collider: {fileID: 0}
+  rb: {fileID: 0}
+  canMove: 0
+  canJump: 0
 --- !u!1 &834349713
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +714,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  isMainCharacter: 0
   speedMult: 100
   jumpMult: 10
   collider: {fileID: 906201225}
@@ -859,7 +883,6 @@ GameObject:
   - component: {fileID: 1368032420}
   - component: {fileID: 1368032421}
   - component: {fileID: 1368032422}
-  - component: {fileID: 1368032423}
   m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
@@ -985,24 +1008,13 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  isMainCharacter: 0
   speedMult: 10
   jumpMult: 1
   collider: {fileID: 1368032421}
   rb: {fileID: 1368032420}
   canMove: 0
   canJump: 0
---- !u!114 &1368032423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368032417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a5171222280bc419d5ba296a43e741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1894264612
 GameObject:
   m_ObjectHideFlags: 0
