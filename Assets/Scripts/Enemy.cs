@@ -22,15 +22,15 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-   
+
         if (collision.CompareTag("Player"))
         {
 
         }
         player = collision.gameObject.GetComponent<Player>();
     }
-    
-    
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (player)
@@ -41,29 +41,29 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
+    int WayPointIndex = 0;
     private void FixedUpdate()
     {
         if (player)
         {
             //Oyuncuyu Takip et
-           
+
             Rb.velocity = (player.transform.position - transform.position).normalized * Speed * Time.fixedDeltaTime;
-           
-            if (Mathf.Abs( player.transform.position.x )- Mathf.Abs(transform.position.x)<=1.02f )
-            {
-                Debug.Log("dadad");
-                Destroy(player.gameObject);
-            }
+
+
 
         }
         //vardiya noktası varsa vardiyaya
         else if (WayPoints.Count >= 2)
         {
-           
-              
-                Rb.velocity = (WayPoints[0] - transform.position).normalized * Speed * Time.fixedDeltaTime;
             
+            Vector3 Distance = WayPoints[WayPointIndex] - transform.position;
+            Distance.y = 0;
+            Rb.velocity = (Distance).normalized * Speed * Time.fixedDeltaTime;
+            if (Mathf.Abs(Distance.x) <= 1)
+            {
+                WayPointIndex = (WayPointIndex + 1) == WayPoints.Count ? 0 : WayPointIndex + 1;
+            }
 
 
         }
@@ -72,11 +72,14 @@ public class Enemy : MonoBehaviour
 
         }
         //Idle Bekle
-
+        
     }
 
-    void Yakaladı()
+    private void OnDrawGizmos()
     {
-
+        for (int i = 1; i < WayPointsTransform.Length; i++)
+        {
+            Gizmos.DrawLine(WayPointsTransform[i].position, WayPointsTransform[i - 1].position);
+        }
     }
 }
