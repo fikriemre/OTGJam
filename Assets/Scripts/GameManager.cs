@@ -48,15 +48,7 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(FindStartCheckpoint());
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-           KillPlayer();
-        }
-    }
-
+    
     IEnumerator FindStartCheckpoint()
     {
         yield return new WaitForEndOfFrame();
