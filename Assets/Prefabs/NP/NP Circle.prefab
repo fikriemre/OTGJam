@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myPlayerReplica: {fileID: 2160954910996421786, guid: df93926d0d80a3543b37ff8fa212f4a2, type: 3}
+  turnObjectSound: {fileID: 8300000, guid: 353e81d88f87e944090f1309609986b5, type: 3}

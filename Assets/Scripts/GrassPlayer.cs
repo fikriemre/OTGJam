@@ -32,6 +32,7 @@ public class GrassPlayer : Player
     {
         float MoveHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(MoveHorizontal * speedMult * Time.deltaTime, rb.velocity.y);
+        SFXManager.Instance.WalkSound(Mathf.Abs(MoveHorizontal) >= 0.01f);
     }
 
     public void Jump()

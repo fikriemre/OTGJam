@@ -33,6 +33,7 @@ public class CirclePlayer : Player
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         rb.AddTorque(-speedMult * moveHorizontal);
+        SFXManager.Instance.WalkSound(Mathf.Abs(moveHorizontal) >= 0.01f);
     }
 
     public void Jump()

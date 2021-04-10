@@ -31,7 +31,7 @@ public class SFXManager : MonoBehaviour
         enemyVoice = 4,
         detection = 5,
         enemyHit = 6,
-        death = 7
+        death = 7,
     }
 
 
