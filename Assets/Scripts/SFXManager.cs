@@ -22,13 +22,15 @@ public class SFXManager : MonoBehaviour
     }
 
     public enum SFXClips
-    {
-        leaf ,
-        grass ,
-        rock ,
-        jump ,
-        walk ,
-        detection
+    {    
+        walk = 0,
+        jump = 1,
+        drop = 2,       
+        enemyWalk = 3,
+        enemyVoice = 4,
+        detection = 5,
+        enemyHit = 6,
+        death = 7
     }
 
 
@@ -42,14 +44,37 @@ public class SFXManager : MonoBehaviour
         audioSource.PlayOneShot(audioClip);
     }
 
-    public void EnemyDetectedSound()
-    {        
-        audioSource.PlayOneShot(audioClips[(int)SFXClips.detection]);
+    public void WalkSound()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.walk]);
     }
-
     public void JumpSound()
     {
         audioSource.PlayOneShot(audioClips[(int)SFXClips.jump]);
     }
-
+    public void DropSound()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.drop]);
+    }
+    
+    public void EnemyWalkSound()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.enemyWalk]);
+    }
+    public void EnemyVoice()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.enemyVoice]);
+    }
+    public void EnemyDetectedSound()
+    {        
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.detection]);
+    }
+    public void EnemyHitSound()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.enemyHit]);
+    }
+    public void DeathSound()
+    {
+        audioSource.PlayOneShot(audioClips[(int)SFXClips.death]);
+    }
 }
