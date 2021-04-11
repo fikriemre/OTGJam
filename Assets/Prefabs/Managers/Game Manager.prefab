@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainPlayer: {fileID: 2764547790341905350, guid: ef0f3d2e37985954eb75da65adc3184e, type: 3}
+  replaceParticle: {fileID: 7288345664710742548, guid: 88042d30ce531944e949cb6eea4d3928, type: 3}
+  checkPoint: {x: 0, y: 0, z: 0}
