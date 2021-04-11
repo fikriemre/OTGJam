@@ -82,6 +82,7 @@ public class DialogueManager : MonoBehaviour
         }
         
         dialogues.RemoveAt(0);
+        
         if (dialogues.Count != 0)
         {
             StartCoroutine("WriteOneLetterAtATime");
@@ -91,11 +92,5 @@ public class DialogueManager : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-    public void UpdateText(Text text)
-    {
-        
-    }
-    
     
 }
