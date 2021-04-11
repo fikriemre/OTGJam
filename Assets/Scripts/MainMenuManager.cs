@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-
+   public GameObject CreditsPanel;
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(2);
@@ -29,5 +29,13 @@ public class MainMenuManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+    public void CreditsOpen()
+    {
+        CreditsPanel.SetActive(true);
+    }
+    public void CreditsQuit()
+    {
+        CreditsPanel.SetActive(false);
     }
 }
