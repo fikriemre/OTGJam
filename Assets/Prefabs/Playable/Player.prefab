@@ -103,7 +103,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isMainCharacter: 0
-  speedMult: 100
+  speedMult: 200
   jumpMult: 10
   collider: {fileID: 2764547790341905352}
   rb: {fileID: 2764547790341905353}
