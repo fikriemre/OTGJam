@@ -19,16 +19,16 @@ public class Enemy : MonoBehaviour
             WayPoints.Add(WayPointsTransform[i].position);
         }
 
-        StartCoroutine(EnemySound());
+        //StartCoroutine(EnemySound());
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.GetComponent<Player>())
         {
-
+            player = collision.gameObject.GetComponent<Player>();
+            SFXManager.Instance.EnemyDetectedSound();
         }
-        player = collision.gameObject.GetComponent<Player>();
+        
     }
 
 
@@ -50,8 +50,6 @@ public class Enemy : MonoBehaviour
             //Oyuncuyu Takip et
 
             Rb.velocity = (player.transform.position - transform.position).normalized * Speed * Time.fixedDeltaTime;
-            SFXManager.Instance.EnemyDetectedSound();
-
 
 
         }
@@ -86,10 +84,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    float voiceDelay = Random.Range(1, 2);
-    IEnumerator EnemySound()
-    {
-        SFXManager.Instance.EnemyVoice();
-        yield return new WaitForSeconds(voiceDelay);
-    }
+    // float voiceDelay = Random.Range(1, 2);
+    // IEnumerator EnemySound()
+    // {
+    //     SFXManager.Instance.EnemyVoice();
+    //     yield return new WaitForSeconds(voiceDelay);
+    // }
 }

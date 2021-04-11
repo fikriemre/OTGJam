@@ -30,8 +30,7 @@ public class SFXManager : MonoBehaviour
         enemyWalk = 3,
         enemyVoice = 4,
         detection = 5,
-        enemyHit = 6,
-        death = 7,
+        death = 6
     }
 
 
@@ -83,10 +82,10 @@ public class SFXManager : MonoBehaviour
     {        
         audioSource.PlayOneShot(audioClips[(int)SFXClips.detection]);
     }
-    public void EnemyHitSound()
-    {
-        audioSource.PlayOneShot(audioClips[(int)SFXClips.enemyHit]);
-    }
+    // public void EnemyHitSound()
+    // {
+    //     audioSource.PlayOneShot(audioClips[(int)SFXClips.enemyHit]);
+    // }
     public void DeathSound()
     {
         audioSource.PlayOneShot(audioClips[(int)SFXClips.death]);

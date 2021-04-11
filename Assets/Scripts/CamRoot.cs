@@ -20,12 +20,14 @@ public class CamRoot : MonoBehaviour
 
     Vector3 MoveDir = Vector3.zero;
     MoveDir.x = Input.GetAxis("Horizontal");
-    MoveDir.y = Input.GetAxis("Vertical");
+    MoveDir.y = Input.GetAxis("Vertical") * .5f;
         
         if (Player.Instance)
         {
             transform.position =
                 Vector3.Lerp(transform.position, Player.Instance.transform.position+MoveDir*5, Time.deltaTime * 5);
+
+            ParallaxManager.Instance.transform.position = new Vector3(Player.Instance.transform.position.x, 0, 0);
         }
     }
 }

@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
         if(Player.Instance)
         {
             Player.Instance.KillPlayer();
+            SFXManager.Instance.DeathSound();
         }
     }
     

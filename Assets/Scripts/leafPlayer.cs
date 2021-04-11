@@ -39,7 +39,6 @@ public class leafPlayer : Player
         {
             MoveVertical = 0;
         }
-        Debug.Log(speedMult);
 
         rb.velocity = new Vector2( rb.velocity.x,MoveVertical * speedMult * Time.deltaTime);
     }
