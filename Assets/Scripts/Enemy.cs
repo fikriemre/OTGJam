@@ -1,15 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+
+    public AudioClip enemySound;
     Player player;
     GameObject playerObje;
     Rigidbody2D Rb;
     public float Speed = 100f;
     public Transform[] WayPointsTransform;
     private List<Vector3> WayPoints = new List<Vector3>();
+
+    private bool canPlay;
 
     private void Awake()
     {
@@ -18,9 +23,29 @@ public class Enemy : MonoBehaviour
         {
             WayPoints.Add(WayPointsTransform[i].position);
         }
-
-        //StartCoroutine(EnemySound());
     }
+
+    private void Update()
+    {
+        if (canPlay)
+        {
+            canPlay = false;
+            StartCoroutine(PlayEnemySound());
+        }
+    }
+
+    IEnumerator PlayEnemySound()
+    {
+        SFXManager.Instance.EnemyIdleSound().PlayOneShot(enemySound);
+
+        yield return new WaitForSeconds(5);
+
+        canPlay = true;
+    }
+    
+    
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<CubePlayer>())
@@ -83,11 +108,5 @@ public class Enemy : MonoBehaviour
             Gizmos.DrawLine(WayPointsTransform[i].position, WayPointsTransform[i - 1].position);
         }
     }
-
-    // float voiceDelay = Random.Range(1, 2);
-    // IEnumerator EnemySound()
-    // {
-    //     SFXManager.Instance.EnemyVoice();
-    //     yield return new WaitForSeconds(voiceDelay);
-    // }
+    
 }

@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc196a4fa8443af4db1f5a60cdf830b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySound: {fileID: 8300000, guid: 2fc857ddc8b7bb746aa79dbf2daa6644, type: 3}
   Speed: 100
   WayPointsTransform:
   - {fileID: 7267742785320016866}
