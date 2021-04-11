@@ -8,19 +8,9 @@ public class SFXManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
-    private static SFXManager instance;
+    public static SFXManager Instance;
 
-    public static SFXManager Instance
-    {
-        get
-        {
-            if(instance == null)
-            {
-                Debug.LogError("SFXManager is null");
-            }
-            return instance;
-        }
-    }
+   
 
     public enum SFXClips
     {    
@@ -36,12 +26,8 @@ public class SFXManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null)
-        {
-            Destroy(gameObject);
-        }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+     
+        Instance = this; 
     }
 
     public void PlaySFXSound(AudioClip audioClip)
