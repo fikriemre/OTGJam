@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
   
     public GameObject mainPlayer;
 
+    public ParticleSystem replaceParticle;
+
     public Vector3 checkPoint;
 
     private int currentSceneIndex;
@@ -103,6 +105,11 @@ public class GameManager : MonoBehaviour
             Player.Instance.KillPlayer();
             SFXManager.Instance.DeathSound();
         }
+    }
+
+    public void PlayReplaceEffect(Vector3 pos)
+    {
+        Instantiate(replaceParticle, pos, Quaternion.identity);
     }
     
     

@@ -21,6 +21,12 @@ public class Player : MonoBehaviour
    {
       Instance = this;
    }
+
+   private void Start()
+   {
+      GameManager.Instance.PlayReplaceEffect(transform.position);
+   }
+
    public void ChangePlayerControl()
    {
       RaycastHit2D hit = Physics2D.CircleCast(transform.position, 2, Vector2.up, 0.1f, targetLayer);
@@ -30,6 +36,7 @@ public class Player : MonoBehaviour
          ChangableObject co = hit.collider.gameObject.GetComponent<ChangableObject>();
          if (co)
          {
+            GameManager.Instance.PlayReplaceEffect(transform.position);
             GameObject go = Instantiate(co.myPlayerReplica, transform.position, Quaternion.identity);
             SFXManager.Instance.PlaySFXSound(co.turnObjectSound);
             Destroy(co.gameObject);
@@ -46,7 +53,9 @@ public class Player : MonoBehaviour
 
    public void KillPlayer()
    {
+      GameManager.Instance.PlayReplaceEffect(transform.position);
       Destroy(gameObject);
+      
    }
 
    private void OnDrawGizmos()
