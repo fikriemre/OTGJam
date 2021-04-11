@@ -104,9 +104,17 @@ public class GameManager : MonoBehaviour
         {
             Player.Instance.KillPlayer();
             SFXManager.Instance.DeathSound();
+            StartCoroutine(DeathSequence());
         }
     }
 
+
+    IEnumerator DeathSequence()
+    {
+        yield return new WaitForSeconds(2);
+        LoadSameScene();
+    }
+    
     public void PlayReplaceEffect(Vector3 pos)
     {
         Instantiate(replaceParticle, pos, Quaternion.identity);
