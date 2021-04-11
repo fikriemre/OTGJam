@@ -7,7 +7,7 @@ public class PlayerKiller : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.GetComponent<Player>())
+        if (other.collider.GetComponent<CubePlayer>())
         {
             GameManager.Instance.KillPlayer();
         }
