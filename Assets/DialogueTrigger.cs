@@ -17,4 +17,13 @@ public class DialogueTrigger : MonoBehaviour
          DialogueManager.Instance.SetDialogueToWrite(dialogue);
       }
    }
+
+   private void OnDrawGizmos()
+   {
+      Color c = Color.green;
+      c.a = 0.4f;
+      Gizmos.color = c;
+      Gizmos.DrawSphere(transform.position, ((CircleCollider2D) collider).radius);
+
+   }
 }

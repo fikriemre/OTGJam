@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour
         
         for (int i = 0; i < dialogueForToWrite.Length; i++)
         {
-            text.text = dialogueForToWrite.Substring(0, i);
+            text.text = dialogueForToWrite.Substring(0, i+1);
             yield return new WaitForSeconds(waitForNextLetter);
         }
 
