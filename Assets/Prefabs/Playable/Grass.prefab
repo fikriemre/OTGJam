@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5713576891099349038}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.89, y: -1.06, z: 0}
-  m_LocalScale: {x: 0.1131, y: 0.66, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1180a91e0c41cab4888d81d58951acfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -143,5 +143,3 @@ MonoBehaviour:
   jumpMult: 5
   collider: {fileID: 5713576891099349036}
   rb: {fileID: 5713576891099349037}
-  turnLeafSound: {fileID: 8300000, guid: 622d210919e470c42a1c8349c2d79f88, type: 3}
-  turnLeafSoundVolume: 1
