@@ -20,6 +20,5 @@ public class EyeFollow : MonoBehaviour
         vecMousePoz= camera.ScreenToWorldPoint(Input.mousePosition);
         
         vecMousePoz.z = 0;
-        Debug.Log(vecMousePoz);
     }
 }
