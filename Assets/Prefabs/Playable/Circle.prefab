@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2160954910996421784}
   - component: {fileID: 2160954910996421785}
   - component: {fileID: 2160954910996421791}
-  - component: {fileID: 2160954910996421790}
   - component: {fileID: 2160954910996421789}
+  - component: {fileID: 629746603}
   m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a2f357ab6b4d034496c961451dfcab8, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1659188085
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d2e28fac06ed2544bd8af242f26dab6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -107,22 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2160954910996421790
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2160954910996421786}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 58c96bff7b27036409d17e92aed7e8a8, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &2160954910996421789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +125,66 @@ MonoBehaviour:
   isMainCharacter: 0
   speedMult: 10
   jumpMult: 1
-  collider: {fileID: 2160954910996421790}
+  collider: {fileID: 629746603}
   rb: {fileID: 2160954910996421791}
   canMove: 0
   canJump: 0
+--- !u!60 &629746603
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160954910996421786}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5, y: -0.26999998}
+      - {x: 0.59, y: -0.17}
+      - {x: 0.63, y: 0.12}
+      - {x: 0.71999997, y: 0.42}
+      - {x: 0.71999997, y: 0.81}
+      - {x: 0.65, y: 0.9}
+      - {x: 0.62, y: 0.94}
+      - {x: 0.53999996, y: 1.03}
+      - {x: 0.48, y: 1.0799999}
+      - {x: 0.32, y: 1.16}
+      - {x: 0.089999996, y: 1.23}
+      - {x: 0, y: 1.25}
+      - {x: -0.24, y: 1.3199999}
+      - {x: -0.34, y: 1.3199999}
+      - {x: -0.37, y: 1.31}
+      - {x: -0.45, y: 1.22}
+      - {x: -0.75, y: 1.14}
+      - {x: -0.90999997, y: 1}
+      - {x: -1, y: 0.84}
+      - {x: -1.1, y: 0.76}
+      - {x: -1.15, y: 0.61}
+      - {x: -1.15, y: 0.45999998}
+      - {x: -1.09, y: 0.41}
+      - {x: -1.09, y: 0.14}
+      - {x: -0.98999995, y: -0.03}
+      - {x: -0.95, y: -0.06}
+      - {x: -0.79999995, y: -0.35999998}
+      - {x: -0.72999996, y: -0.45}
+      - {x: -0.64, y: -0.5}
+      - {x: -0.56, y: -0.51}
+      - {x: -0.34, y: -0.51}
+      - {x: -0.16, y: -0.42}
+      - {x: 0.29999998, y: -0.32999998}
+      - {x: 0.39999998, y: -0.31}
