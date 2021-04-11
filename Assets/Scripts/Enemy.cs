@@ -23,9 +23,9 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Player>())
+        if (collision.gameObject.GetComponent<CubePlayer>())
         {
-            player = collision.gameObject.GetComponent<Player>();
+            player = collision.gameObject.GetComponent<CubePlayer>();
             SFXManager.Instance.EnemyDetectedSound();
         }
         
