@@ -109,6 +109,10 @@ MonoBehaviour:
   rb: {fileID: 2764547790341905353}
   canMove: 0
   canJump: 0
+  groundCheckDistance: 1
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!61 &2764547790341905352
 BoxCollider2D:
   m_ObjectHideFlags: 0
