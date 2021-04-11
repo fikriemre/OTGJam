@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
         {
             
             Vector3 Distance = WayPoints[WayPointIndex] - transform.position;
-            Distance.y = 0;
+            //Distance.y = 0;
             Rb.velocity = (Distance) * Speed * Time.fixedDeltaTime;
             if (Mathf.Abs(Distance.x) <= 1)
             {
